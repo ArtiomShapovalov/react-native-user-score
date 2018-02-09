@@ -25,7 +25,7 @@ import { View, ScrollView, Text } from 'react-native';
 
 import ScoreView from 'react-native-score-rating';
 
-export class Demo extends React.Component {
+export class Demo extends Component<*,*> {
   state = {
     value: 2,
     scrollEnabled: true,
