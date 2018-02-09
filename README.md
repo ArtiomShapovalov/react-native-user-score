@@ -66,7 +66,7 @@ Note: Text is a custom component to demonstrate coloring. You have absolute cont
 
 | Name           |                            Description                             |                                Default |
 | :------------- | :----------------------------------------------------------------: | -------------------------------------: |
-| score         |                           Current score                            |                                      0 |
+| value         |                           Current score                            |                                      0 |
 | maximum        |                    Maximum score                     |                                      5 |
 | spacing        |                  Spacing between each component\*                  |                                     10 |
 | onChangeValue  |      Func:bool=>JSX to render a single score component      | Not supplied - requires implementation |
