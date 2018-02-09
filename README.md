@@ -1,6 +1,8 @@
-# react-native-score-rating
+# react-native-user-score
 
 A flexible, lightweight user score component. The component responds to drags and not just clicks, icon boundaries are computed automatically.
+
+<img src="https://i.imgur.com/YtC6xgS.gif" />
 
 ## Installation
 
@@ -13,10 +15,6 @@ or
 ```sh
 yarn add react-native-score-rating
 ```
-
-## Demo
-
-<img src="https://i.imgur.com/YtC6xgS.gif" />
 
 ## Usage
 
