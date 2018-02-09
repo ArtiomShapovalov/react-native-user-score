@@ -1,0 +1,23 @@
+{
+  "name": "react-native-user-score",
+  "version": "1.0.0",
+  "description": "A lightweight, flexible user score component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtiomShapovalov/react-native-user-score.git"
+  },
+  "keywords": ["react", "native", "score", "star", "rating", "user", "points"],
+  "author": {
+    "name": "Artiom Shapovalov",
+    "email": "vaomamago@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "flow-bin": "^0.63.1",
+    "flow-typed": "^2.2.3"
+  }
+}
