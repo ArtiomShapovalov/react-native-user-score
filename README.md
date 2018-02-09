@@ -23,7 +23,7 @@ import React, { Component } from 'react';
 
 import { View, ScrollView, Text } from 'react-native';
 
-import ScoreRating from 'react-native-score-rating';
+import ScoreView from 'react-native-score-rating';
 
 export class Demo extends React.Component {
   state = {
@@ -40,8 +40,8 @@ export class Demo extends React.Component {
         }}
       >
         <ScrollView scrollEnabled={this.state.scrollEnabled}>
-          <ScoreRating
-            rating={this.state.value}
+          <ScoreView
+            value={this.state.value}
             maximum={5}
             onChangeValue={value =>
               this.setState({ scrollEnabled: false, value })
@@ -66,13 +66,13 @@ Note: Text is a custom component to demonstrate coloring. You have absolute cont
 
 | Name           |                            Description                             |                                Default |
 | :------------- | :----------------------------------------------------------------: | -------------------------------------: |
-| rating         |                           Current score                            |                                      0 |
-| maximum        |                    Maximum rating/"star count"                     |                                      5 |
+| score         |                           Current score                            |                                      0 |
+| maximum        |                    Maximum score                     |                                      5 |
 | spacing        |                  Spacing between each component\*                  |                                     10 |
-| onChangeValue  |      Func:bool=>JSX to render a single score/rating component      | Not supplied - requires implementation |
+| onChangeValue  |      Func:bool=>JSX to render a single score component      | Not supplied - requires implementation |
 | onChangeFinish | Func:() => void for triggering event after score is finaly changed | Not supplied - requires implementation |
 
-\* Spacing is applied as a right margin of all inner ratings.
+\* Spacing is applied as a right margin of all inner scores.
 
 ## License
 

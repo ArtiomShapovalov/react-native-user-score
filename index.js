@@ -6,7 +6,7 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 
 type PropsType = {
   maximum?: number,
-  rating?: number,
+  score?: number,
   spacing?: number,
   onChangeValue: (index: number) => any,
   onChangeFinish?: () => void,
@@ -14,10 +14,10 @@ type PropsType = {
   containerStyle?: Object,
 };
 
-export default class ScoreRating extends Component<PropsType, *> {
+export default class ScoreView extends Component<PropsType, *> {
   static defaultProps = {
     maximum: 5,
-    rating: 0,
+    value: 0,
     spacing: 10,
     onChangeValue: (index: number) => {},
   };
@@ -34,9 +34,9 @@ export default class ScoreRating extends Component<PropsType, *> {
 
   onLayout = (layout: Object) =>
     this.score &&
-    this.score.measure((x, y, width, height, pageX, pageY) => {
-      this.setState({ scoreX: pageX, scoreWidth: width });
-    });
+    this.score.measure((x, y, width, height, pageX, pageY) =>
+      this.setState({ scoreX: pageX, scoreWidth: width }),
+    );
 
   _onChangeFinish = () =>
     this.props.onChangeFinish && this.props.onChangeFinish();
@@ -45,14 +45,17 @@ export default class ScoreRating extends Component<PropsType, *> {
     const x = evt.nativeEvent.pageX - this.state.scoreX;
     const propotion = x / this.state.scoreWidth;
 
-    let rating = Math.ceil(+this.props.maximum * propotion);
+    let score = Math.ceil(+this.props.maximum * propotion);
 
-    if (rating < 0) rating = 0;
-    else if (rating > this.state.maximum) rating = this.state.maximum;
+    if (score < 0) {
+      score = 0;
+    } else if (score > this.state.maximum) {
+      score = this.state.maximum;
+    }
 
-    this.setState({ rating });
+    this.setState({ value: score });
 
-    this.props.onChangeValue(rating);
+    this.props.onChangeValue(score);
   };
 
   render() {
@@ -67,7 +70,7 @@ export default class ScoreRating extends Component<PropsType, *> {
 
       icons.push(
         <View key={i} style={styles}>
-          {this.props.renderItem(i < this.state.rating)}
+          {this.props.renderItem(i < this.state.value)}
         </View>,
       );
     }
