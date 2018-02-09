@@ -7,13 +7,13 @@ A flexible, lightweight user score component. The component responds to drags an
 ## Installation
 
 ```sh
-npm i -S react-native-score-rating
+npm i -S react-native-user-score
 ```
 
 or
 
 ```sh
-yarn add react-native-score-rating
+yarn add react-native-user-score
 ```
 
 ## Usage
